@@ -55,7 +55,7 @@
                                                         <rect key="frame" x="108" y="0.0" width="290" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                         <connections>
-                                                            <action selector="changedsSliderValue" destination="BYZ-38-t0r" eventType="valueChanged" id="bNC-pQ-WYg"/>
+                                                            <action selector="changeSlidersValues" destination="BYZ-38-t0r" eventType="valueChanged" id="bNC-pQ-WYg"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>
@@ -85,7 +85,7 @@
                                                         <rect key="frame" x="109" y="0.0" width="289" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                         <connections>
-                                                            <action selector="changedsSliderValue" destination="BYZ-38-t0r" eventType="valueChanged" id="6RS-Mf-5yU"/>
+                                                            <action selector="changeSlidersValues" destination="BYZ-38-t0r" eventType="valueChanged" id="6RS-Mf-5yU"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>
@@ -115,7 +115,7 @@
                                                         <rect key="frame" x="108" y="0.0" width="290" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                         <connections>
-                                                            <action selector="changedsSliderValue" destination="BYZ-38-t0r" eventType="valueChanged" id="5Gj-Fa-Ck3"/>
+                                                            <action selector="changeSlidersValues" destination="BYZ-38-t0r" eventType="valueChanged" id="5Gj-Fa-Ck3"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>

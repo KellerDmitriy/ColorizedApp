@@ -7,39 +7,40 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    @IBOutlet weak var demoView: UIView!
+    @IBOutlet private weak var demoView: UIView!
     
-    @IBOutlet weak var redValueLabel: UILabel!
-    @IBOutlet weak var greenValueLabel: UILabel!
-    @IBOutlet weak var blueValueLabel: UILabel!
+    @IBOutlet private weak var redValueLabel: UILabel!
+    @IBOutlet private weak var greenValueLabel: UILabel!
+    @IBOutlet private weak var blueValueLabel: UILabel!
     
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet private weak var redSlider: UISlider!
+    @IBOutlet private weak var greenSlider: UISlider!
+    @IBOutlet private weak var blueSlider: UISlider!
+    
+    private func createRGB() {
+        demoView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
     
     override func viewDidLayoutSubviews() {
         demoView.layer.cornerRadius = 15
-        changedsSliderValue()
+        changeSlidersValues()
+        createRGB()
     }
     
-    @IBAction func changedsSliderValue() {
-        
-        let red = CGFloat(redSlider.value)
-        let green = CGFloat(greenSlider.value)
-        let  blue = CGFloat(blueSlider.value)
-        
-        redValueLabel.text = redSlider.value.formatted()
-        greenValueLabel.text = greenSlider.value.formatted()
-        blueValueLabel.text = blueSlider.value.formatted()
-        
-        demoView.backgroundColor = UIColor(
-            red: red,
-            green: green,
-            blue: blue,
-            alpha: 1
-        )
+    @IBAction private func changeSlidersValues() {
+        redValueLabel.text = redSlider.value
+            .formatted(.number.precision(.fractionLength(2)))
+        greenValueLabel.text = greenSlider.value
+            .formatted(.number.precision(.fractionLength(2)))
+        blueValueLabel.text = blueSlider.value
+            .formatted(.number.precision(.fractionLength(2)))
     }
 }
 

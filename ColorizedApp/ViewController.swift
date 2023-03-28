@@ -19,7 +19,30 @@ final class ViewController: UIViewController {
     @IBOutlet private weak var greenSlider: UISlider!
     @IBOutlet private weak var blueSlider: UISlider!
     
-    private func createRGB() {
+    override func viewDidLoad() {
+        demoView.layer.cornerRadius = 15
+        setColor()
+        
+        redValueLabel.text = string(from: redSlider)
+        greenValueLabel.text = string(from: greenSlider)
+        blueValueLabel.text = string(from: blueSlider)
+    }
+    
+    
+    @IBAction func changeSliderValue(_ sender: UISlider) {
+        setColor()
+        
+        switch sender{
+        case redSlider:
+            redValueLabel.text = string(from: redSlider)
+        case greenSlider:
+            greenValueLabel.text = string(from: greenSlider)
+        default:
+            blueValueLabel.text = string(from: blueSlider)
+        }
+    }
+ 
+    private func setColor() {
         demoView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
@@ -27,20 +50,9 @@ final class ViewController: UIViewController {
             alpha: 1
         )
     }
-    
-    override func viewDidLayoutSubviews() {
-        demoView.layer.cornerRadius = 15
-        changeSlidersValues()
-        createRGB()
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
     
-    @IBAction private func changeSlidersValues() {
-        redValueLabel.text = redSlider.value
-            .formatted(.number.precision(.fractionLength(2)))
-        greenValueLabel.text = greenSlider.value
-            .formatted(.number.precision(.fractionLength(2)))
-        blueValueLabel.text = blueSlider.value
-            .formatted(.number.precision(.fractionLength(2)))
-    }
 }
 

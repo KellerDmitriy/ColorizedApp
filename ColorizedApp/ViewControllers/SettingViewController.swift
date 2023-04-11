@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingViewController.swift
 //  ColorizedApp
 //
 //  Created by Келлер Дмитрий on 25.03.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class SettingViewController: UIViewController {
     
     @IBOutlet private weak var demoView: UIView!
     

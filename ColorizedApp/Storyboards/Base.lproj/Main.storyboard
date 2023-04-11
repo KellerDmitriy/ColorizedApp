@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Colorized App View Controller-->
+        <!--color me ✐-->
         <scene sceneID="fr3-x9-ugE">
             <objects>
                 <viewController id="hEg-Tz-6Sd" customClass="ColorizedAppViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,13 +19,16 @@
                         <viewLayoutGuide key="safeArea" id="DYW-zi-ccn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jfa-Ih-sJi">
+                    <navigationItem key="navigationItem" title="color me ✐" id="jfa-Ih-sJi">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="hLY-Fi-GZq">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="W00-wF-M0a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="colorView" destination="Zbc-ss-vDQ" id="9tD-Wy-I15"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0F3-dS-B6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,14 +115,14 @@
                                                     <action selector="changeSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="nte-p1-l3U"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.40000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nok-dZ-ecq">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.40000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nok-dZ-ecq">
                                                 <rect key="frame" x="-2" y="42" width="257" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <connections>
                                                     <action selector="changeSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="tr5-jT-BRm"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xEf-M5-4sV">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xEf-M5-4sV">
                                                 <rect key="frame" x="-2" y="84" width="257" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <connections>
@@ -137,6 +140,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Done">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="hMj-4U-U0i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

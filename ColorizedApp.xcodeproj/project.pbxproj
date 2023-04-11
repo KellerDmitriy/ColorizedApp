@@ -88,8 +88,8 @@
 		E181B99729E5503A00C1E175 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E160F01929CE4F9B00BDDD2B /* SettingViewController.swift */,
 				E181B99829E5537500C1E175 /* ColorizedAppViewController.swift */,
+				E160F01929CE4F9B00BDDD2B /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

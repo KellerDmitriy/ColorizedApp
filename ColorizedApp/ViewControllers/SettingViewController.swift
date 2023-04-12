@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 final class SettingViewController: UIViewController {
     
     @IBOutlet private weak var demoView: UIView!
@@ -41,11 +39,11 @@ final class SettingViewController: UIViewController {
             blueValueLabel.text = string(from: blueSlider)
         }
     }
- 
+    
     @IBAction func doneButtonPressed() {
         delegate.colorized(with: demoView.backgroundColor ?? colorRGB)
         dismiss(animated: true)
-        
+        //не уверен, что так правильно развернуть опциональное значение в этом случае
     }
     
     private func setColor() {
@@ -81,7 +79,7 @@ private extension UIColor {
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-
+        
         return (red, green, blue, alpha)
     }
 }
